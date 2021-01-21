@@ -1,0 +1,74 @@
+.notification {
+  width: 100%;
+  max-width: 32rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: $main-black;
+  border-radius: 5rem;
+
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+
+  position: absolute;
+  bottom: 1rem;
+
+  @include above($tablet) {
+    max-width: 60rem;
+    bottom: 1.6rem;
+  }
+
+  &__close {
+    display: none;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.3rem;
+    line-height: 130%;
+    text-align: center;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #FFFFFF;
+  }
+
+  button {
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    background: transparent;
+
+    &:after, &:before {
+      content: '';
+      display: flex;
+      position: absolute;
+      width: 0.2rem;
+      height: 1.2rem;
+      background: #FFFFFF;
+      transition: background .25s;
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:hover, &:focus {
+      &:after, &:before {
+        background: $main-purple;
+      }
+    }
+  }
+}

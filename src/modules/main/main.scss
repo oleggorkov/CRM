@@ -1,0 +1,473 @@
+.main {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include above($tablet) {
+    flex-direction: row;
+  }
+
+  @include above($mid-desktop) {
+    max-width: 128rem;
+  }
+
+  &-aside {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @include above($tablet) {
+      margin-right: 5rem;
+    }
+
+    &__back {
+      width: auto;
+      height: 4rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5rem;
+      line-height: 130%;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $main-black;
+
+      position: relative;
+
+      margin-bottom: 3.2rem;
+      margin-left: 0.8rem;
+
+      @include above($tablet) {
+        margin-bottom: 4.3rem;
+        margin-top: 2.1rem;
+        margin-left: 0;
+      }
+
+      &:before {
+        content: '';
+        display: flex;
+        width: 4rem;
+        height: 4rem;
+        background: #FFFFFF;
+        border: 0.1rem solid $main-gray;
+        border-radius: 50%;
+        transition: border .25s;
+
+        margin-right: 1.2rem;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0.6rem;
+        height: 0.6rem;
+        transform: rotate(45deg);
+        border-left: 0.2rem solid $helper-gray;
+        border-bottom: 0.2rem solid $helper-gray;
+        top: 1.6rem;
+        left: 1.9rem;
+      }
+
+      &:hover, &:focus {
+        color: $main-purple;
+
+        &:before {
+          border: 0.1rem solid $main-purple;
+        }
+        &:after {
+          border-left: 0.2rem solid $main-purple;
+          border-bottom: 0.2rem solid $main-purple;
+        }
+      }
+    }
+
+    &__block {
+      width: 16rem;
+      height: auto;
+
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      background: #FFFFFF;
+      border: 0.1rem solid $main-gray;
+      border-radius: 2rem;
+
+      padding: 2rem 2rem 2.4rem 0;
+
+      @include above($tablet) {
+        display: flex;
+      }
+
+      @include above($desktop) {
+        width: 30rem;
+      }
+
+      ul {
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        li {
+          width: 100%;
+          white-space: nowrap;
+
+          &:not(:last-of-type) {
+            margin-bottom: 2.4rem;
+          }
+
+          a {
+            width: 100%;
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 130%;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: $main-black;
+
+            padding-left: 1.8rem;
+
+            transition: border .25s;
+            position: relative;
+            border-left: 0.2rem solid transparent;
+
+            &:after {
+              content: '';
+              width: 0.2rem;
+              height: 1.8rem;
+              display: none;
+              background: $main-purple;
+              position: absolute;
+              left: -2rem;
+            }
+
+            &:hover, &:focus {
+              color: $main-purple;
+              border-left: 0.2rem solid $main-purple;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-personal {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @include above($tablet) {
+      width: 85rem;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 2.4rem;
+      line-height: 130%;
+      font-feature-settings: 'pnum' on, 'lnum' on;
+      color: $main-black;
+
+      margin-bottom: 4rem;
+      margin-left: 0.8rem;
+
+      @include above($tablet) {
+        margin-bottom: 4.9rem;
+        margin-left: 0;
+      }
+    }
+
+    &__setting {
+      width: 100%;
+      height: auto;
+
+      border: 0.1rem solid $main-gray;
+      border-radius: 2rem;
+
+      padding: 1.6rem 1.6rem 3.2rem 1.6rem;
+
+      @include above($tablet) {
+        padding: 2rem 2rem 2.4rem 2rem;
+      }
+
+      &-title {
+        font-weight: bold;
+        font-size: 2rem;
+        line-height: 130%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $main-black;
+
+        margin-bottom: 1.2rem;
+      }
+
+      &-control {
+        font-weight: 500;
+        font-size: 1.5rem;
+        line-height: 150%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $lighter-gray;
+      }
+    }
+
+    &__access {
+      width: 100%;
+      height: auto;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      margin-top: 4rem;
+
+      @include above($tablet-landscape) {
+        flex-direction: row;
+      }
+
+      &-site {
+        flex: 1;
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 130%;
+        text-transform: uppercase;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $main-black;
+
+        margin-bottom: 1.6rem;
+
+        @include above($tablet-landscape) {
+          margin-right: 3.8rem;
+        }
+      }
+
+      &-form {
+        width: 100%;
+
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+
+        @include above($tablet-landscape) {
+          width: 47.8rem;
+        }
+
+        &-item {
+          width: 100%;
+          height: auto;
+
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+
+          position: relative;
+
+          &:not(:nth-of-type(3)) {
+            margin-bottom: 2.4rem;
+          }
+
+          &:first-of-type label span {
+            width: 100%;
+
+            @include above($tablet-landscape) {
+              width: 33rem;
+            }
+          }
+
+          input[type=radio]:checked + label:after {
+            display: flex;
+          }
+
+          &-label {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 130%;
+            font-feature-settings: 'pnum' on, 'lnum' on;
+            color: $main-black;
+
+            cursor: pointer;
+
+            position: relative;
+
+            padding-left: 2.8rem;
+
+            @include above($tablet) {
+              padding-left: 3.2rem;
+            }
+
+            &:hover, &:focus {
+              &:before {
+                border: 0.2rem solid $main-purple;
+              }
+            }
+
+            span {
+              font-weight: 500;
+              font-size: 1.5rem;
+              line-height: 150%;
+              font-feature-settings: 'pnum' on, 'lnum' on;
+              color: $lighter-gray;
+
+              margin-top: 0.8rem;
+            }
+
+            &:after {
+              content: '';
+              display: none;
+              width: 0.8rem;
+              height: 0.8rem;
+              background: $main-purple;
+              border-radius: 50%;
+              position: absolute;
+
+              left: 0.6rem;
+              top: 0.6rem;
+            }
+
+            &:before {
+              content: '';
+              display: flex;
+              width: 1.6rem;
+              height: 1.6rem;
+              border: 0.2rem solid $main-gray;
+              border-radius: 50%;
+              position: absolute;
+
+              transition: border .25s;
+
+              left: 0;
+            }
+          }
+
+          &-password {
+            width: 100%;
+            height: auto;
+
+            display: none;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+
+            padding-left: 3.2rem;
+            margin-top: 2rem;
+
+            label {
+              font-size: 1.3rem;
+              line-height: 130%;
+              font-feature-settings: 'pnum' on, 'lnum' on;
+              color: $main-black;
+
+              margin-bottom: 0.8rem;
+            }
+
+            input {
+              width: 100%;
+              height: 2.7rem;
+
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+
+              font-weight: bold;
+              font-size: 1.5rem;
+              line-height: 130%;
+              font-feature-settings: 'pnum' on, 'lnum' on;
+              color: $main-black;
+
+              border-bottom: 0.1rem solid $main-gray;
+
+              padding-right: 1rem;
+            }
+          }
+        }
+
+        &-buttons {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          align-self: flex-end;
+
+          margin-top: 3.2rem;
+
+          @include above($tablet) {
+            margin-top: 4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button {
+  width: 10.5rem;
+  height: 4rem;
+
+  background: #FFFFFF;
+  border-radius: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 120%;
+  white-space: nowrap;
+
+  text-align: center;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: $main-black;
+
+  transition: all .25s;
+
+  &-cancel {
+    border: 0.1rem solid $main-gray;
+
+    margin-right: 1.2rem;
+
+    &:hover, &:focus {
+      border: 0.1rem solid $main-purple;
+      color: $main-purple;
+    }
+  }
+
+  &-save {
+    width: 11.2rem;
+    background:  $main-purple;
+    color: #FFFFFF;
+    border: 0.1rem solid transparent;
+
+    &:hover, &:focus {
+      border: 0.1rem solid $main-purple;
+      color: $main-purple;
+      background: #FFFFFF;
+    }
+  }
+}
+
+.password-open {
+  display: flex;
+}

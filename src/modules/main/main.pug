@@ -1,0 +1,42 @@
+include ../icon/icon
+include ../breadcrumbs/breadcrumbs
+
+block main
+    section.section
+        .section__wrapper
+            .main
+                .main-aside
+                    a(href='#').main-aside__back Назад
+                    aside.main-aside__block
+                        ul
+                            - for (let x = 0; x < 12; x++)
+                                li
+                                    a(href='#') Доступ к сайту
+                .main-personal
+                    +breadcrumbs
+                    h2.main-personal__title Доступ к сайту
+                    .main-personal__setting
+                        h3.main-personal__setting-title Настройка доступа к сайту
+                        .main-personal__setting-control Контролируйте, кому доступен ваш сайт
+                        .main-personal__access
+                            .main-personal__access-site Интернет сайт
+                            form.main-personal__access-form
+                                .main-personal__access-form-item
+                                    input(type='radio' id='public' name='settings')
+                                    label(for='public').main-personal__access-form-item-label Опубликовать сайт
+                                        span Доступно при оплаченном тарифном плане и купленном домене
+                                .main-personal__access-form-item.password
+                                    input(type='radio' id='pass' name='settings')
+                                    label(for='pass').main-personal__access-form-item-label Сайт защищен паролем
+                                        span Сайт увидит только тот, у кого есть пароль
+                                    .main-personal__access-form-item-password
+                                        label Введите пароль
+                                        input(type='password')
+                                .main-personal__access-form-item
+                                    input(type='radio' id='private' name='settings' checked)
+                                    label(for='private').main-personal__access-form-item-label Приватный сайт
+                                        span Только авторы и владелец сайта смогут увидеть сайт
+                                .main-personal__access-form-buttons
+                                    button.button.button-cancel Отменить
+                                    button(type='submit').button.button-save Сохранить
+

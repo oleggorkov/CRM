@@ -1,0 +1,44 @@
+.breadcrumbs {
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 0.8rem;
+  margin-left: 0.8rem;
+
+  @include above($tablet) {
+    margin-left: 0;
+  }
+
+  ul {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    span {
+      margin-left: 0.2rem;
+      margin-right: 0.2rem;
+    }
+
+    li {
+      white-space: nowrap;
+
+      a {
+        font-size: 1.3rem;
+        line-height: 130%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: $main-black;
+
+        &:hover, &:focus {
+          color: $main-purple;
+        }
+      }
+    }
+  }
+}
