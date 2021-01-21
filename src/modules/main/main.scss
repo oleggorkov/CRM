@@ -399,6 +399,10 @@
               border-bottom: 0.1rem solid $main-gray;
 
               padding-right: 1rem;
+
+              &:focus {
+                border-bottom: 0.1rem solid $main-purple;
+              }
             }
           }
         }
